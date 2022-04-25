@@ -31,3 +31,4 @@
 
 # Custom ignores below here
 .env
+spec/examples.txt
