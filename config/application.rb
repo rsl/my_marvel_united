@@ -17,10 +17,8 @@ module MyMarvelUnited
       g.test_framework :rspec, fixture: false
       g.helper_specs false
       g.controller_specs false
-      # Keeping these commented out until I can be sure
-      # they're not needed
-      # g.view_specs false
-      # g.routing_specs false
+      g.view_specs false
+      g.routing_specs false
     end
   end
 end
