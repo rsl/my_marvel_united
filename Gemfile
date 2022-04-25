@@ -21,7 +21,7 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Custom gems below here (excluding groups)
-gem 'dotenv'
+gem "dotenv"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -33,6 +33,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "rspec-rails"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
