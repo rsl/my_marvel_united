@@ -16,14 +16,14 @@
           <%= link_to_unless current_page?(root_path), 'My MARVEL United', root_path %>
         </h1>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="toggleable-navbar-content">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
 
-      <div class="navbar-menu" id="navbarBasicExample">
+      <div class="navbar-menu" id="toggleable-navbar-content">
         <div class="navbar-start">
           <%= link_to 'Heroes', heroes_path, class: 'navbar-item' %>
           <a class="navbar-item">
@@ -34,16 +34,27 @@
           </a>
           <%= link_to 'Boxes', boxes_path, class: 'navbar-item' %>
         </div>
-      </div>
 
-      <div class="navbar-end">
-        <% if signed_in? %>
-          <%= link_to 'Log Out', destroy_user_session_path, class: 'navbar-item', data: { turbo_method: 'delete' } %>
-        <% else %>
-          <%= link_to 'Log In', new_user_session_path, class: 'navbar-item' %>
-        <% end %>
+        <div class="navbar-end">
+          <% if signed_in? %>
+            <%= link_to 'Log Out', destroy_user_session_path, class: 'navbar-item', data: { turbo_method: 'delete' } %>
+          <% else %>
+            <%= link_to 'Log In', new_user_session_path, class: 'navbar-item' %>
+          <% end %>
+          </div>
         </div>
       </div>
+
+      <script>
+        (function () {
+          var burger = document.querySelector('.navbar-burger');
+          var menu = document.querySelector('#' + burger.dataset.target);
+          burger.addEventListener('click', function () {
+              burger.classList.toggle('is-active');
+              menu.classList.toggle('is-active');
+          });
+        })();
+      </script>
     </navbar>
 
     <section class="flash has-text-centered">
@@ -55,7 +66,7 @@
       <% end %>
     </section>
 
-    <main class="mt-4">
+    <main>
       <div class="container">
         <%= yield %>
       </div>

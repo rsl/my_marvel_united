@@ -19,6 +19,8 @@ $link: $primary !default;
 $link-hover: lighten($primary, 10%) !default;
 $notification-radius: 0;
 
+$mobile-side-spacing: 7px;
+
 // Update some of Bulma's component variables
 // $body-background-color: $beige-lighter;
 // $control-border-width: 2px;
@@ -42,9 +44,16 @@ html, body {
   height: 100%;
 }
 
+h1, h2, h3, p {
+  @include block;
+}
+
 h1 {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 900 !important;
+  a {
+    font-weight: inherit;
+  }
 }
 h2 {
   font-size: 1.75em;
@@ -57,42 +66,61 @@ h3 {
   color: darken($magenta, 10%);
 }
 
-navbar.main {
-  background-color: $purple;
-  color: $white;
+.x-men {
+  white-space: nowrap;
+}
 
+navbar.main {
   a {
     border: 0;
   }
 
+  @include mobile {
+    background-color: red;
+  }
+
   > .navbar-brand {
-    padding: 0 1em;
-    color: $white;
-    a {
-      color: $white;
+    @include tablet {
+      padding-top: 0.25em;
+      padding-left: 1em;
+      padding-right: 1em;
     }
-  }
-
-  .navbar-item {
-    font-weight: 700;
-    color: lighten($purple, 40%);
-    padding-right: 1rem;
-    padding-left: 1rem;
-    &:hover {
-      color: lighten($magenta, 30%);
-      background-color: darken($magenta, 10%);
+    @include mobile {
+      padding-left: $mobile-side-spacing;
     }
-  }
-  .navbar-end .navbar-item.has-button:hover {
-    background-color: transparent !important;
   }
 }
 
-@media screen and (max-width: 1087px) {
-  .navbar-menu {
-    background-color: $purple;
-  }
-}
+// navbar.main {
+//   background-color: $purple;
+//   color: $white;
+
+//   a {
+//     border: 0;
+//   }
+
+//   > .navbar-brand {
+//     padding: 0 1em;
+//     color: $white;
+//     a {
+//       color: $white;
+//     }
+//   }
+
+//   .navbar-item {
+//     font-weight: 700;
+//     color: lighten($purple, 40%);
+//     padding-right: 1rem;
+//     padding-left: 1rem;
+//     &:hover {
+//       color: lighten($magenta, 30%);
+//       background-color: darken($magenta, 10%);
+//     }
+//   }
+//   .navbar-end .navbar-item.has-button:hover {
+//     background-color: transparent !important;
+//   }
+// }
 
 a {
   font-weight: 700;
@@ -116,6 +144,13 @@ a {
     vertical-align: middle;
     position: relative;
     bottom: 2px;
+  }
+}
+
+main {
+  @include mobile {
+    padding-right: $mobile-side-spacing;
+    padding-left: $mobile-side-spacing;
   }
 }
 
