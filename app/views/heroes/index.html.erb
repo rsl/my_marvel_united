@@ -23,8 +23,8 @@
         <td><%= hero.sexual_orientation %></td>
         <td><%= hero.box.name %></td>
         <td class="actions has-text-right">
-          <%= link_to 'Edit', edit_hero_path(hero) %>
-          <%= link_to 'Delete', hero_path(hero), data: { turbo_method: 'delete', turbo_confirm: 'Are you sure you want to delete this hero?' } %>
+          <%= link_to fa_icon_tag('pen-to-square', 'duotone', title: 'Edit'), edit_hero_path(hero) %>
+          <%= link_to fa_icon_tag('trash', 'duotone', title: 'Delete'), hero_path(hero), data: { turbo_method: 'delete', turbo_confirm: 'Are you sure you want to delete this hero?' } %>
         </td>
       </tr>
     <% end %>

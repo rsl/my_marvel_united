@@ -1,3 +1,5 @@
 <% box.heroes.each do |hero| %>
-  <span class="hero-card has-text-grey-lighter"><%= link_to hero.name, hero_path(hero) %> (Hero)</span>
+  <span class="hero-card has-text-grey-lighter">
+    <%= link_to hero.name, hero_path(hero) %>&nbsp;<%= fa_icon_tag 'face-smile-halo', 'duotone', title: 'Hero' %>
+  </span>
 <% end %>

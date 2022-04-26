@@ -71,62 +71,70 @@ h3 {
 }
 
 navbar.main {
+  h1 {
+    margin-bottom: 0;
+  }
+
   a {
     border: 0;
   }
 
-  @include mobile {
-    background-color: red;
+  // Eventually make this work!
+  // @include mobile {
+  //   background-color: red;
+  // }
+
+  @include tablet {
+    background-color: $purple;
+    color: $white;
+
+    .navbar-end .navbar-item:hover {
+      background-color: transparent !important;
+      &:hover {
+        color: $white !important;
+      }
+    }
   }
 
   > .navbar-brand {
+    @include mobile {
+      padding-left: $mobile-side-spacing;
+    }
     @include tablet {
       padding-top: 0.25em;
       padding-left: 1em;
       padding-right: 1em;
+      color: $white;
+      a {
+        color: $white;
+      }
     }
-    @include mobile {
-      padding-left: $mobile-side-spacing;
+  }
+
+  .navbar-item {
+    font-weight: 700;
+
+    @include tablet {
+      color: lighten($purple, 40%);
+
+      &:hover {
+        color: lighten($magenta, 30%);
+        background-color: darken($magenta, 10%);
+      }
     }
+  }
+
+  .navbar-menu {
+    padding: 0;
   }
 }
 
-// navbar.main {
-//   background-color: $purple;
-//   color: $white;
-
-//   a {
-//     border: 0;
-//   }
-
-//   > .navbar-brand {
-//     padding: 0 1em;
-//     color: $white;
-//     a {
-//       color: $white;
-//     }
-//   }
-
-//   .navbar-item {
-//     font-weight: 700;
-//     color: lighten($purple, 40%);
-//     padding-right: 1rem;
-//     padding-left: 1rem;
-//     &:hover {
-//       color: lighten($magenta, 30%);
-//       background-color: darken($magenta, 10%);
-//     }
-//   }
-//   .navbar-end .navbar-item.has-button:hover {
-//     background-color: transparent !important;
-//   }
-// }
-
 a {
   font-weight: 700;
-  border-bottom: 1px dashed desaturate(lighten($primary, 30%), 10%);
+  border-bottom: 1px dashed desaturate(lighten($primary, 50%), 10%);
   &:hover {
     border-bottom-style: solid;
+    border-bottom-color: desaturate(lighten($primary, 40%), 10%);
   }
 }
 
@@ -152,6 +160,7 @@ main {
     padding-right: $mobile-side-spacing;
     padding-left: $mobile-side-spacing;
   }
+  margin-top: 1.5em;
 }
 
 td.actions {
@@ -184,4 +193,13 @@ img.card {
 
 .hero-card {
   margin-right: 0.5em;
+  white-space: nowrap;
+}
+
+.box.login {
+  width: 50%;
+
+  @include mobile {
+    width: 90%;
+  }
 }
