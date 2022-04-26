@@ -17,5 +17,4 @@ test:
 production:
   <<: *default
   database: my_marvel_united_production
-  username: my_marvel_united
-  password: <%= ENV["MY_MARVEL_UNITED_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
