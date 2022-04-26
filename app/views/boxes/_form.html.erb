@@ -1,0 +1,40 @@
+<%= form_for box, html: { class: 'mt-6' } do |form| %>
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <%= form.label :name, class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= form.text_field :name, class: 'input', placeholder: "You don't have to put the word 'box' in the name" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <%= form.label :description, class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= form.text_area :description, class: 'textarea', rows: 6, placeholder: 'This is optional' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <!-- Used for spacing -->
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= form.submit 'Save', class: 'button is-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

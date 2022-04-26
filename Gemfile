@@ -21,6 +21,7 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Custom gems below here (excluding groups)
+gem "devise"
 gem "dotenv-rails"
 
 group :development, :test do

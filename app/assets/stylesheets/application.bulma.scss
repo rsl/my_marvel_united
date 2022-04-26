@@ -1,21 +1,24 @@
 // @charset "utf-8";
 
 // Import a Google Font
-// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 // Set your brand colors
-// $purple: #8A4D76;
-// $pink: #FA7C91;
-// $brown: #757763;
-// $beige-light: #D0D1CD;
-// $beige-lighter: #EFF0EB;
+$purple: #2E0940;
+$plum: #7F093D;
+$magenta: #BB064D;
+$red: #EB0B37;
+$orange: #F94D1B;
+$white: #FFF;
 
 // Update Bulma's global variables
-// $family-sans-serif: "Nunito", sans-serif;
+$family-sans-serif: "Roboto", sans-serif;
 // $grey-dark: $brown;
 // $grey-light: $beige-light;
-// $primary: $purple;
-// $link: $pink;
+$primary: $magenta;
+$primary-invert: $white;
+$link: $primary !default;
+$link-hover: lighten($primary, 10%) !default;
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
 
@@ -37,3 +40,89 @@
 // @import "bulma/sass/layout/section.sass";
 
 @import 'bulma/bulma';
+
+html, body {
+  height: 100%;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 900 !important;
+}
+h2 {
+  font-size: 1.75em;
+  font-weight: 900;
+  color: $magenta;
+}
+h3 {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: darken($magenta, 10%);
+}
+
+navbar.main {
+  background-color: $purple;
+  color: $white;
+
+  > .navbar-brand {
+    padding: 0 1em;
+    color: $white;
+  }
+
+  .navbar-item {
+    font-weight: 700;
+    color: lighten($purple, 40%);
+    padding-right: 1rem;
+    padding-left: 1rem;
+    &:hover {
+      color: lighten($magenta, 30%);
+      background-color: darken($magenta, 10%);
+    }
+  }
+  .navbar-end .navbar-item.has-button:hover {
+    background-color: transparent !important;
+  }
+}
+
+@media screen and (max-width: 1087px) {
+  .navbar-menu {
+    background-color: $purple;
+  }
+}
+
+a {
+  font-weight: 700;
+  border-bottom: 1px dashed desaturate(lighten($primary, 30%), 10%);
+  &:hover {
+    border-bottom-style: solid;
+  }
+}
+
+.button {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.box.login {
+  background-color: desaturate(lighten($magenta, 50%), 40%);
+  padding: 2em;
+
+  input[type=checkbox] {
+    -webkit-transform: scale(1.3, 1.3);
+    vertical-align: middle;
+    position: relative;
+    bottom: 2px;
+  }
+}
+
+td.actions {
+  a {
+    color: lighten($grey-light, 15%);
+    font-weight: 500;
+    padding-left: 5px;
+    border: 0;
+    &:hover {
+      color: $magenta;
+    }
+  }
+}
