@@ -1,8 +1,11 @@
-<h2>Home Page</h2>
+<% if signed_in? %>
+  <%= render template: 'heroes/show' %>
+<% else %>
+  <h2>Home Page</h2>
 
-<p>
-  Hello! The content that will be here later is a rotating sample of heros/villains
-  as well as a single location, perhaps.
-</p>
+  <p>
+    Hello! All the current content requires a login, due to copyright questions currently being asked by me. Hopefully the application can be open to public at some future point.
+  </p>
 
-<p>But for now, nothing.</p>
+  <p>But for now, nothing.</p>
+<% end %>

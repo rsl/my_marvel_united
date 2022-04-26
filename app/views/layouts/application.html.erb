@@ -55,19 +55,10 @@
       <% end %>
     </section>
 
-    <% if current_page?(root_path) %>
-      <section class="hero is-fullheight-with-navbar">
-        <div class="hero-body">
-          <p class="title">A hero/villain image will be displayed here</p>
-          <p class="subtitle">Some or all of the details about that character will be displayed over here along with a link to their actual entry show page</p>
-        </div>
-      </section>
-    <% else %>
-      <main class="mt-4">
-        <div class="container">
-          <%= yield %>
-        </div>
-      </main>
-    <% end %>
+    <main class="mt-4">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
