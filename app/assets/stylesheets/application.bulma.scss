@@ -130,3 +130,19 @@ td.actions {
     }
   }
 }
+
+a.button.is-white {
+  color: lighten($grey, 30%);
+}
+
+.has-text-grey-lighter:hover {
+  color: darken($grey-lighter, 20%) !important;
+}
+
+form .field.is-horizontal .field-label {
+  margin-top: 2px;
+}
+
+img.card {
+  border-radius: 15px;
+}

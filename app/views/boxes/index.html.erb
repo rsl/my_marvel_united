@@ -21,9 +21,7 @@
     <% @boxes.each do |box| %>
       <tr>
         <td><%= link_to box.name, box_path(box) %></td>
-        <td>
-          TK
-        </td>
+        <td><%= render 'contents', box: box %></td>
         <td><%= box.description %></td>
         <td class="actions has-text-right">
           <%= link_to 'Edit', edit_box_path(box) %>

@@ -13,7 +13,7 @@ class BoxesController < WebController
   def create
     @box = Box.new
     if @box.update(box_params)
-      flash[:notice] = 'Box created!'
+      flash[:notice] = 'Box added!'
       redirect_to boxes_url
     else
       flash.now[:alert] = 'stupid'

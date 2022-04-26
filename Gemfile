@@ -21,8 +21,10 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Custom gems below here (excluding groups)
+gem "aws-sdk-s3", require: false
 gem "devise"
 gem "dotenv-rails"
+gem "friendly_id"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
