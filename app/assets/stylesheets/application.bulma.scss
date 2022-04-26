@@ -156,11 +156,14 @@ a {
 }
 
 main {
-  @include mobile {
-    padding-right: $mobile-side-spacing;
-    padding-left: $mobile-side-spacing;
-  }
   margin-top: 1.5em;
+
+  > .container {
+    // @include mobile {
+    //   padding-right: $mobile-side-spacing;
+    //   padding-left: $mobile-side-spacing;
+    // }
+  }
 }
 
 td.actions {
