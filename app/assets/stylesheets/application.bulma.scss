@@ -48,6 +48,7 @@ h1, h2, h3, p {
   @include block;
 }
 
+
 h1 {
   font-size: 1.8em;
   font-weight: 900 !important;
@@ -64,10 +65,6 @@ h3 {
   font-size: 1.4em;
   font-weight: 700;
   color: darken($magenta, 10%);
-}
-
-.x-men {
-  white-space: nowrap;
 }
 
 navbar.main {
@@ -159,10 +156,10 @@ main {
   margin-top: 1.5em;
 
   > .container {
-    // @include mobile {
-    //   padding-right: $mobile-side-spacing;
-    //   padding-left: $mobile-side-spacing;
-    // }
+    @include mobile {
+      padding-right: $mobile-side-spacing;
+      padding-left: $mobile-side-spacing;
+    }
   }
 }
 
@@ -192,6 +189,10 @@ form .field.is-horizontal .field-label {
 
 img.card {
   border-radius: 15px;
+
+  @include mobile {
+    max-width: 40%;
+  }
 }
 
 .hero-card {

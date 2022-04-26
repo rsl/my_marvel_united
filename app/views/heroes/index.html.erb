@@ -8,8 +8,8 @@
     <tr>
       <th class="has-text-left">Hero Name</th>
       <th class="has-text-left">Real Name</th>
-      <th class="has-text-left">Gender Identity</th>
-      <th class="has-text-left">Sexual Orientation</th>
+      <th class="has-text-left is-hidden-mobile">Gender Identity</th>
+      <th class="has-text-left is-hidden-mobile">Sexual Orientation</th>
       <th class="has-text-left">Box</th>
       <th class="actions"></th>
     </tr>
@@ -19,8 +19,8 @@
       <tr>
         <td><%= link_to hero.name, hero_path(hero) %></td>
         <td><%= hero.real_name %></td>
-        <td><%= hero.gender_identity %></td>
-        <td><%= hero.sexual_orientation %></td>
+        <td class="is-hidden-mobile"><%= hero.gender_identity %></td>
+        <td class="is-hidden-mobile"><%= hero.sexual_orientation %></td>
         <td><%= hero.box.name %></td>
         <td class="actions has-text-right">
           <%= link_to fa_icon_tag('pen-to-square', 'duotone', title: 'Edit'), edit_hero_path(hero) %>
