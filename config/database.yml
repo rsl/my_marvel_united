@@ -3,6 +3,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+# Using the Heroku database via DATABASE_URL in .env
 development:
   <<: *default
   database: my_marvel_united_development

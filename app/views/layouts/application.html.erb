@@ -12,7 +12,9 @@
   <body>
     <navbar class="navbar main" role="navigation" aria-label="main-navigation">
       <div class="navbar-brand">
-        <h1>My MARVEL United</h1>
+        <h1>
+          <%= link_to_unless current_page?(root_path), 'My MARVEL United', root_path %>
+        </h1>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
@@ -38,11 +40,9 @@
 
       <div class="navbar-end">
         <% if signed_in? %>
-          <%= link_to 'Log Out', destroy_user_session_path, method: 'delete', class: 'navbar-item' %>
+          <%= link_to 'Log Out', destroy_user_session_path, class: 'navbar-item', data: { turbo_method: 'delete' } %>
         <% else %>
-          <div class="navbar-item has-button">
-            <%= link_to 'Log In', new_user_session_path, class: 'button' %>
-          </div>
+          <%= link_to 'Log In', new_user_session_path, class: 'navbar-item' %>
         <% end %>
         </div>
       </div>

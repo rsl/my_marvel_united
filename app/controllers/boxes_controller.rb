@@ -1,4 +1,5 @@
 class BoxesController < WebController
+  before_action :authenticate_user!
   before_action :load_box, except: %i[index new create]
 
   def index

@@ -13,14 +13,11 @@ $white: #FFF;
 
 // Update Bulma's global variables
 $family-sans-serif: "Roboto", sans-serif;
-// $grey-dark: $brown;
-// $grey-light: $beige-light;
 $primary: $magenta;
 $primary-invert: $white;
 $link: $primary !default;
 $link-hover: lighten($primary, 10%) !default;
-// $widescreen-enabled: false;
-// $fullhd-enabled: false;
+$notification-radius: 0;
 
 // Update some of Bulma's component variables
 // $body-background-color: $beige-lighter;
@@ -71,6 +68,9 @@ navbar.main {
   > .navbar-brand {
     padding: 0 1em;
     color: $white;
+    a {
+      color: $white;
+    }
   }
 
   .navbar-item {
