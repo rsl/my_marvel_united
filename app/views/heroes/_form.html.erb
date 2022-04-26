@@ -35,7 +35,7 @@
       <div class="field">
         <div class="control">
           <% if hero.card.persisted? %>
-            <%= image_tag hero.card.variant(resize_to_fit: [300, 300]), class: 'card' %>
+            <%= hero_image_tag(hero) %>
           <% end %>
 
           <div class="file">

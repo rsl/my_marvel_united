@@ -1,10 +1,24 @@
 <h2><%= @hero.name %></h2>
 
-<%= image_tag @hero.card.variant(resize_to_fit: [300, 300]), class: 'card' %>
+<div class="is-flex is-align-items-start">
+  <%= hero_image_tag(@hero) %>
 
-<table class="table foo">
-  <tr>
-    <th scope="row">Box</th>
-    <td><%= link_to @hero.box.name, box_path(@hero.box) %></td>
-  </tr>
-</table>
+  <table class="table ml-4 is-narrow">
+    <tr>
+      <th scope="row" class="has-text-left">Real Name</th>
+      <td><%= @hero.real_name %></td>
+    </tr>
+    <tr>
+      <th scope="row" class="has-text-left">Gender Identity</th>
+      <td><%= @hero.gender_identity %></td>
+    </tr>
+    <tr>
+      <th scope="row" class="has-text-left">Sexual Orientation</th>
+      <td><%= @hero.sexual_orientation %></td>
+    </tr>
+    <tr>
+      <th scope="row" class="has-text-left">Box</th>
+      <td><%= link_to @hero.box.name, box_path(@hero.box) %></td>
+    </tr>
+  </table>
+</div>
