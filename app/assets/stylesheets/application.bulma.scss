@@ -64,6 +64,10 @@ navbar.main {
   background-color: $purple;
   color: $white;
 
+  a {
+    border: 0;
+  }
+
   > .navbar-brand {
     padding: 0 1em;
     color: $white;
