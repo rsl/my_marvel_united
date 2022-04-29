@@ -68,8 +68,13 @@ navbar.main {
     background-color: $purple;
     color: $white;
 
-    .navbar-end .navbar-item:hover {
-      color: $white !important;
+    .navbar-end .navbar-item {
+      font-size: 0.99em;
+      text-transform: none;
+      color: lighten($purple, 30%);
+      &:hover {
+        color: $white !important;
+      }
     }
   }
 
@@ -81,10 +86,10 @@ navbar.main {
       padding-top: 0.25em;
       padding-left: 1em;
       padding-right: 1em;
-      // color: $white;
-      // a {
-      //   color: $white;
-      // }
+      color: lighten($magenta, 5%);
+      a {
+        color: lighten($magenta, 5%);
+      }
     }
   }
 
@@ -97,7 +102,7 @@ navbar.main {
       color: lighten($purple, 40%);
 
       &:hover {
-        color: lighten($magenta, 30%);
+        color: lighten($magenta, 20%);
       }
 
       &.is-active {

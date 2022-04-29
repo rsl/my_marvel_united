@@ -1,23 +1,23 @@
-<% unless action_name == 'index' %>
+<% unless current_page?(boxes_path) %>
   <h3>Heroes</h3>
 <% end %>
 
-<div class="block">
+<%= content_tag :div, class: current_page?(boxes_path) ? nil : 'block' do %>
   <% box.heroes.each do |hero| %>
     <span class="hero-card has-text-grey-lighter">
       <%= link_to hero.name, hero_path(hero) %>&nbsp;<%= fa_icon_tag 'face-smile-halo', 'duotone', title: 'Hero' %>
     </span>
   <% end %>
-</div>
+<% end %>
 
 <% unless action_name == 'index' %>
   <h3>Villains</h3>
 <% end %>
 
-<div class="block">
+<%= content_tag :div, class: current_page?(boxes_path) ? nil : 'block' do %>
   <% box.villains.each do |villain| %>
     <span class="villain-card has-text-grey-lighter">
       <%= link_to villain.name, villain_path(villain) %>&nbsp;<%= fa_icon_tag 'face-smile-horns', 'duotone', title: 'Villain' %>
     </span>
   <% end %>
-</div>
+<% end %>

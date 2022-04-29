@@ -27,12 +27,12 @@
 
       <div class="navbar-menu" id="toggleable-navbar-content">
         <div class="navbar-start">
-          <%= link_to 'Heroes', heroes_path, class: 'navbar-item is-active' %>
-          <%= link_to 'Villains', villains_path, class: 'navbar-item' %>
+          <%= navbar_link_item 'Heroes', heroes_path %>
+          <%= navbar_link_item 'Villains', villains_path %>
           <a class="navbar-item">
             Locations
           </a>
-          <%= link_to 'Boxes', boxes_path, class: 'navbar-item' %>
+          <%= navbar_link_item 'Boxes', boxes_path %>
         </div>
 
         <div class="navbar-end">
