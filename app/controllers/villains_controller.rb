@@ -16,7 +16,7 @@ class VillainsController < WebController
       flash[:notice] = 'Villain added!'
       redirect_to villains_url
     else
-      flash.now[:alert] = 'stupid'
+      flash.now[:alert] = 'There a problem! Please try again.'
       render :new, status: :unprocessable_entity
     end
   end
@@ -34,7 +34,7 @@ class VillainsController < WebController
       flash[:notice] = 'Villain updated!'
       redirect_to villains_url
     else
-      flash.now[:alert] = 'stupid'
+      flash.now[:alert] = 'There a problem! Please try again.'
       render :new, status: :unprocessable_entity
     end
   end
@@ -43,7 +43,7 @@ class VillainsController < WebController
     if @villain.destroy
       flash[:notice] = 'Villain deleted!'
     else
-      flash[:alert] = 'stupid'
+      flash[:alert] = 'There a problem! Please try again.'
     end
     redirect_to villains_url, status: :see_other
   end

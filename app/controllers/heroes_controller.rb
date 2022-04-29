@@ -16,7 +16,7 @@ class HeroesController < WebController
       flash[:notice] = 'Hero added!'
       redirect_to heroes_url
     else
-      flash.now[:alert] = 'stupid'
+      flash.now[:alert] = 'There a problem! Please try again.'
       render :new, status: :unprocessable_entity
     end
   end
@@ -34,7 +34,7 @@ class HeroesController < WebController
       flash[:notice] = 'Hero updated!'
       redirect_to heroes_url
     else
-      flash.now[:alert] = 'stupid'
+      flash.now[:alert] = 'There a problem! Please try again.'
       render :new, status: :unprocessable_entity
     end
   end
@@ -43,7 +43,7 @@ class HeroesController < WebController
     if @hero.destroy
       flash[:notice] = 'Hero deleted!'
     else
-      flash[:alert] = 'stupid'
+      flash[:alert] = 'There a problem! Please try again.'
     end
     redirect_to heroes_url, status: :see_other
   end

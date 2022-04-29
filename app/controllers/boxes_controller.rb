@@ -16,7 +16,7 @@ class BoxesController < WebController
       flash[:notice] = 'Box added!'
       redirect_to boxes_url
     else
-      flash.now[:alert] = 'stupid'
+      flash.now[:alert] = 'There a problem! Please try again.'
       render :new, status: :unprocessable_entity
     end
   end
@@ -34,7 +34,7 @@ class BoxesController < WebController
       flash[:notice] = 'Box updated!'
       redirect_to boxes_url
     else
-      flash.now[:alert] = 'stupid'
+      flash.now[:alert] = 'There a problem! Please try again.'
       render :new, status: :unprocessable_entity
     end
   end
@@ -43,7 +43,7 @@ class BoxesController < WebController
     if @box.destroy
       flash[:notice] = 'Box deleted!'
     else
-      flash[:alert] = 'stupid'
+      flash[:alert] = 'There a problem! Please try again.'
     end
     redirect_to boxes_url, status: :see_other
   end
