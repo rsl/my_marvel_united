@@ -6,7 +6,7 @@ module ApplicationHelper
     tag.i **extras.merge(class: klass)
   end
 
-  def hero_image_tag(hero)
-    image_tag @hero.card.variant(resize_to_fill: [250, 400, { crop: :centre }]), class: 'card'
+  def card_image_tag(cardable)
+    image_tag cardable.card.variant(resize_to_fill: [250, 400, { crop: :centre }]), class: 'card'
   end
 end

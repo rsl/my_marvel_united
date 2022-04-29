@@ -3,7 +3,7 @@ class BoxesController < WebController
   before_action :load_box, except: %i[index new create]
 
   def index
-    @boxes = Box.all
+    @boxes = Box.order(:name).all
   end
 
   def new

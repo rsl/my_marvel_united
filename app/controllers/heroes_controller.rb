@@ -3,7 +3,7 @@ class HeroesController < WebController
   before_action :load_hero, except: %i[index new create]
 
   def index
-    @heroes = Hero.includes(:box).order('name ASC').all
+    @heroes = Hero.includes(:box).order(:name).all
   end
 
   def new

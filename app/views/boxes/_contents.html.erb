@@ -1,5 +1,11 @@
-<% box.heroes.each do |hero| %>
+<% box.heroes.order(:name).each do |hero| %>
   <span class="hero-card has-text-grey-lighter">
     <%= link_to hero.name, hero_path(hero) %>&nbsp;<%= fa_icon_tag 'face-smile-halo', 'duotone', title: 'Hero' %>
+  </span>
+<% end %>
+
+<% box.villains.order(:name).each do |villain| %>
+  <span class="villain-card has-text-grey-lighter">
+    <%= link_to villain.name, villain_path(villain) %>&nbsp;<%= fa_icon_tag 'face-smile-horns', 'duotone', title: 'Villain' %>
   </span>
 <% end %>

@@ -21,23 +21,6 @@ $notification-radius: 0;
 
 $mobile-side-spacing: 7px;
 
-// Update some of Bulma's component variables
-// $body-background-color: $beige-lighter;
-// $control-border-width: 2px;
-// $input-border-color: transparent;
-// $input-shadow: none;
-
-// Import only what you need from Bulma
-// @import "bulma/sass/utilities/_all.sass";
-// @import "bulma/sass/base/_all.sass";
-// @import "bulma/sass/elements/button.sass";
-// @import "bulma/sass/elements/container.sass";
-// @import "bulma/sass/elements/title.sass";
-// @import "bulma/sass/form/_all.sass";
-// @import "bulma/sass/components/navbar.sass";
-// @import "bulma/sass/layout/hero.sass";
-// @import "bulma/sass/layout/section.sass";
-
 @import 'bulma/bulma';
 
 html, body {
@@ -86,10 +69,7 @@ navbar.main {
     color: $white;
 
     .navbar-end .navbar-item:hover {
-      background-color: transparent !important;
-      &:hover {
-        color: $white !important;
-      }
+      color: $white !important;
     }
   }
 
@@ -101,22 +81,27 @@ navbar.main {
       padding-top: 0.25em;
       padding-left: 1em;
       padding-right: 1em;
-      color: $white;
-      a {
-        color: $white;
-      }
+      // color: $white;
+      // a {
+      //   color: $white;
+      // }
     }
   }
 
   .navbar-item {
     font-weight: 700;
+    font-size: 1.1em;
+    text-transform: uppercase;
 
     @include tablet {
       color: lighten($purple, 40%);
 
       &:hover {
         color: lighten($magenta, 30%);
-        background-color: darken($magenta, 10%);
+      }
+
+      &.is-active {
+        color: $white;
       }
     }
   }
@@ -195,7 +180,7 @@ img.card {
   }
 }
 
-.hero-card {
+.hero-card, .villain-card {
   margin-right: 0.5em;
   white-space: nowrap;
 }

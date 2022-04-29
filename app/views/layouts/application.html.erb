@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <navbar class="navbar main" role="navigation" aria-label="main-navigation">
+    <navbar class="navbar main is-transparent" role="navigation" aria-label="main-navigation">
       <div class="navbar-brand">
         <h1>
           <%= link_to_unless current_page?(root_path), 'My MARVEL United', root_path %>
@@ -27,10 +27,8 @@
 
       <div class="navbar-menu" id="toggleable-navbar-content">
         <div class="navbar-start">
-          <%= link_to 'Heroes', heroes_path, class: 'navbar-item' %>
-          <a class="navbar-item">
-            Villains
-          </a>
+          <%= link_to 'Heroes', heroes_path, class: 'navbar-item is-active' %>
+          <%= link_to 'Villains', villains_path, class: 'navbar-item' %>
           <a class="navbar-item">
             Locations
           </a>
