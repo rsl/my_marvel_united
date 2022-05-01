@@ -5,4 +5,4 @@
 
 <%= render 'shared/character_filters' %>
 
-<%= render "shared/#{ character_display }", characters: @villains %>
+<%= render "shared/#{ character_display.downcase }", characters: @villains %>

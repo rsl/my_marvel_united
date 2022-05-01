@@ -253,9 +253,13 @@ form.js-filters {
     .field-label {
       margin-right: 0.75em;
     }
-  }
 
-  select[name=character_display] {
-    text-transform: capitalize;
+
+    .characteristics {
+      padding-top: 0.33em;
+      label {
+        margin-right: 0.6em;
+      }
+    }
   }
 }

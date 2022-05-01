@@ -10,7 +10,13 @@ class HeroesController < WebController
     else
       @heroes = @heroes.order(:name)
     end
-    if character_display == 'cards'
+    case params[:mutant_status]&.downcase
+    when 'yes'
+      @heroes = @heroes.mutant
+    when 'no'
+      @heroes = @heroes.non_mutant
+    end
+    if character_display.downcase == 'cards'
       @heroes = @heroes.includes(card_attachment: :blob)
     end
   end

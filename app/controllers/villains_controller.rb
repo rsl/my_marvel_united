@@ -9,7 +9,13 @@ class VillainsController < WebController
     else
       @villains = @villains.order(:name)
     end
-    if character_display == 'cards'
+    case params[:mutant_status]&.downcase
+    when 'yes'
+      @villains = @villains.mutant
+    when 'no'
+      @villains = @villains.non_mutant
+    end
+    if character_display.downcase == 'cards'
       @villains = @villains.includes(card_attachment: :blob)
     end
   end
