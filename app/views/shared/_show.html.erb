@@ -23,5 +23,13 @@
       <th scope="row" class="has-text-left">Box</th>
       <td><%= link_to character.box.name, character.box %></td>
     </tr>
+    <% if character.mutant? %>
+      <tr>
+        <th scope="row" class="has-text-left">
+          <!-- Used for spacing -->
+        </th>
+        <td>Is a mutant</td>
+      </tr>
+    <% end %>
   </table>
 </div>

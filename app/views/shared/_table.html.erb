@@ -3,6 +3,7 @@
     <tr>
       <th class="has-text-left">Name</th>
       <th class="has-text-left">Real Name</th>
+      <th class="has-text-left">Characteristics</th>
       <th class="has-text-left is-hidden">Gender Identity</th>
       <th class="has-text-left is-hidden">Sexual Orientation</th>
       <th class="has-text-left">Box</th>
@@ -14,6 +15,9 @@
       <tr>
         <td><%= link_to character.name, character %></td>
         <td><%= character.real_name %></td>
+        <td>
+          <%= 'Mutant' if character.mutant? %>
+        </td>
         <td class="is-hidden"><%= character.gender_identity %></td>
         <td class="is-hidden"><%= character.sexual_orientation %></td>
         <td><%= character.box.name %></td>
@@ -25,7 +29,14 @@
     <% end %>
     <% if characters.empty? %>
       <tr>
-        <td colspan="666" class="has-text-centered p-6">No <%= controller_name %> in database</td>
+        <td colspan="666" class="has-text-centered p-6">
+          No <%= controller_name %>
+          <% if params[:query].present? %>
+            match the search
+          <% else %>
+            in database
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

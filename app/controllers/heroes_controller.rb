@@ -4,7 +4,12 @@ class HeroesController < WebController
   before_action :ensure_character_display, only: :index
 
   def index
-    @heroes = Hero.includes(:box).order(:name)
+    @heroes = Hero.includes(:box)
+    if params[:query].present?
+      @heroes = @heroes.search_by_name(params[:query])
+    else
+      @heroes = @heroes.order(:name)
+    end
     if character_display == 'cards'
       @heroes = @heroes.includes(card_attachment: :blob)
     end
@@ -36,7 +41,7 @@ class HeroesController < WebController
   def update
     if @hero.update(hero_params)
       flash[:notice] = 'Hero updated!'
-      redirect_to heroes_url
+      redirect_back fallback_location: heroes_url
     else
       flash.now[:alert] = 'There a problem! Please try again.'
       render :new, status: :unprocessable_entity
@@ -66,6 +71,7 @@ class HeroesController < WebController
       :real_name,
       :gender_identity,
       :sexual_orientation,
+      :mutant,
     )
   end
 end

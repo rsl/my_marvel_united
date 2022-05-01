@@ -25,6 +25,7 @@ gem "aws-sdk-s3", require: false
 gem "devise"
 gem "dotenv-rails"
 gem "friendly_id"
+gem "pg_search"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

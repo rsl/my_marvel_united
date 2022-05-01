@@ -8,5 +8,12 @@
     <% end %>
   </div>
 <% else %>
-  <p class="has-text-centered">No <%= controller_name %> in database</p>
+  <p class="has-text-centered">
+    No <%= controller_name %>
+    <% if params[:query].present? %>
+      match the search. Please try again.
+    <% else %>
+      in database
+    <% end %>
+  </p>
 <% end %>

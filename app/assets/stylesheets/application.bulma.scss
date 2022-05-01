@@ -204,7 +204,7 @@ img.card {
 }
 
 .hero-card, .villain-card {
-  margin-right: 0.5em;
+  margin-right: 0.6em;
   white-space: nowrap;
 }
 
@@ -250,6 +250,9 @@ form.js-filters {
 
   .field.is-horizontal {
     margin: 0 1em;
+    .field-label {
+      margin-right: 0.75em;
+    }
   }
 
   select[name=character_display] {

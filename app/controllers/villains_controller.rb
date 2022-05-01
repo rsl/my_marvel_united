@@ -4,6 +4,11 @@ class VillainsController < WebController
 
   def index
     @villains = Villain.includes(:box).order(:name)
+    if params[:query].present?
+      @villains = @villains.search_by_name(params[:query])
+    else
+      @villains = @villains.order(:name)
+    end
     if character_display == 'cards'
       @villains = @villains.includes(card_attachment: :blob)
     end
@@ -65,6 +70,7 @@ class VillainsController < WebController
       :real_name,
       :gender_identity,
       :sexual_orientation,
+      :mutant,
     )
   end
 end
