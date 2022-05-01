@@ -1,0 +1,44 @@
+<form class="block has-background-info-light py-4 js-filters">
+  <div class="is-flex is-justify-content-space-between">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <div class="label has-text-info">Display</div>
+      </div>
+      <div class="field-body">
+        <div class="field is-narrow">
+          <div class="control">
+            <div class="select is-info">
+              <%= select_tag :display, options_for_select(%w[table cards], selected: params[:display]), class: 'has-text-info js-immediate-filter' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <div class="label has-text-info">Search</div>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= text_field_tag :query, params[:query], class: 'input is-info has-text-info', placeholder: 'Does not work yet' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script>
+  document.addEventListener('turbo:load', () => {
+    let immediateFilters = document.querySelectorAll('.js-immediate-filter');
+
+    for (let immediateFilter of immediateFilters) {
+      immediateFilter.addEventListener('change', (e) => {
+        console.log(document.querySelector('form.js-filters'));
+        document.querySelector('form.js-filters').submit();
+      });
+    }
+  });
+</script>

@@ -3,8 +3,8 @@
     <tr>
       <th class="has-text-left">Name</th>
       <th class="has-text-left">Real Name</th>
-      <th class="has-text-left is-hidden-mobile">Gender Identity</th>
-      <th class="has-text-left is-hidden-mobile">Sexual Orientation</th>
+      <th class="has-text-left is-hidden">Gender Identity</th>
+      <th class="has-text-left is-hidden">Sexual Orientation</th>
       <th class="has-text-left">Box</th>
       <th class="actions"></th>
     </tr>
@@ -14,8 +14,8 @@
       <tr>
         <td><%= link_to character.name, character %></td>
         <td><%= character.real_name %></td>
-        <td class="is-hidden-mobile"><%= character.gender_identity %></td>
-        <td class="is-hidden-mobile"><%= character.sexual_orientation %></td>
+        <td class="is-hidden"><%= character.gender_identity %></td>
+        <td class="is-hidden"><%= character.sexual_orientation %></td>
         <td><%= character.box.name %></td>
         <td class="actions has-text-right">
           <%= link_to fa_icon_tag('pen-to-square', 'duotone', title: 'Edit'), [:edit, character] %>

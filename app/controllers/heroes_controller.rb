@@ -3,7 +3,10 @@ class HeroesController < WebController
   before_action :load_hero, except: %i[index new create]
 
   def index
-    @heroes = Hero.includes(:box, card_attachment: :blob).order(:name).all
+    @heroes = Hero.includes(:box).order(:name)
+    if params[:display] == 'cards'
+      @heroes = @heroes.includes(card_attachment: :blob)
+    end
   end
 
   def new

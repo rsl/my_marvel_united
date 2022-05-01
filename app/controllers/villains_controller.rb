@@ -3,7 +3,10 @@ class VillainsController < WebController
   before_action :load_villain, except: %i[index new create]
 
   def index
-    @villains = Villain.includes(:box).order(:name).all
+    @villains = Villain.includes(:box).order(:name)
+    if params[:display] == 'cards'
+      @villains = @villains.includes(card_attachment: :blob)
+    end
   end
 
   def new

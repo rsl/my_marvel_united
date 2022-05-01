@@ -153,6 +153,10 @@ main {
 }
 
 td.actions {
+  @include desktop {
+    white-space: nowrap;
+  }
+
   a {
     color: lighten($grey-light, 15%);
     font-weight: 500;
@@ -210,19 +214,36 @@ i.fa-face-smile-horns {
   color: lighten($red, 30%);
 }
 
-.characters .character {
+.cards .character {
+  margin-right: 20px;
   margin-bottom: 30px;
   font-weight: 600;
   text-align: center;
-  flex: 0 1 20%;
+  flex: 0 1 calc(20% - 16px);
+
+  &:nth-child(5n) {
+    margin-right: 0 !important;
+  }
 
   @include mobile {
-    flex: 0 1 33%;
+    margin-right: 5px;
+    flex: 0 1 calc(33% - 5px);
   }
 
   img {
     display: block;
     margin: 0 auto 5px;
-    flex-shrink: 0;
+  }
+}
+
+form.js-filters {
+  margin-top: -1.5em;
+
+  .field.is-horizontal {
+    margin: 0 1em;
+  }
+
+  select[name=display] {
+    text-transform: capitalize;
   }
 }

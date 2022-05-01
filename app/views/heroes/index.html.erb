@@ -3,12 +3,6 @@
   <%= link_to 'Add a Hero', new_hero_path, class: 'button is-primary' %>
 </div>
 
-<form>
+<%= render 'shared/character_filters' %>
 
-</form>
-
-<% if params[:display] == 'cards' %>
-  <%= render 'shared/table', characters: @heroes %>
-<% else %>
-  <%= render 'shared/cards', characters: @heroes %>
-<% end %>
+<%= render "shared/#{ params[:display] || 'table' }", characters: @heroes %>

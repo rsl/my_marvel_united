@@ -3,8 +3,6 @@
   <%= link_to 'Add a Villain', new_villain_path, class: 'button is-primary' %>
 </div>
 
-<% if params[:display] == 'cards' %>
-  <%= render 'shared/table', characters: @villains %>
-<% else %>
-  <%= render 'shared/cards', characters: @villains %>
-<% end %>
+<%= render 'shared/character_filters' %>
+
+<%= render "shared/#{ params[:display] || 'table' }", characters: @villains %>
