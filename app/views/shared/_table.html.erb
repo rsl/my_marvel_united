@@ -1,0 +1,32 @@
+<table class="table is-fullwidth is-striped is-hoverable is-narrow">
+  <thead>
+    <tr>
+      <th class="has-text-left">Name</th>
+      <th class="has-text-left">Real Name</th>
+      <th class="has-text-left is-hidden-mobile">Gender Identity</th>
+      <th class="has-text-left is-hidden-mobile">Sexual Orientation</th>
+      <th class="has-text-left">Box</th>
+      <th class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% characters.each do |character| %>
+      <tr>
+        <td><%= link_to character.name, character %></td>
+        <td><%= character.real_name %></td>
+        <td class="is-hidden-mobile"><%= character.gender_identity %></td>
+        <td class="is-hidden-mobile"><%= character.sexual_orientation %></td>
+        <td><%= character.box.name %></td>
+        <td class="actions has-text-right">
+          <%= link_to fa_icon_tag('pen-to-square', 'duotone', title: 'Edit'), [:edit, character] %>
+          <%= link_to fa_icon_tag('trash', 'duotone', title: 'Delete'), character, data: { turbo_method: 'delete', turbo_confirm: 'Are you sure you want to delete this card?' } %>
+        </td>
+      </tr>
+    <% end %>
+    <% if characters.empty? %>
+      <tr>
+        <td colspan="666" class="has-text-centered p-6">No <%= controller_name %> in database</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

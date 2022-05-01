@@ -3,35 +3,12 @@
   <%= link_to 'Add a Hero', new_hero_path, class: 'button is-primary' %>
 </div>
 
-<table class="table is-fullwidth is-striped is-hoverable is-narrow">
-  <thead>
-    <tr>
-      <th class="has-text-left">Name</th>
-      <th class="has-text-left">Real Name</th>
-      <th class="has-text-left is-hidden-mobile">Gender Identity</th>
-      <th class="has-text-left is-hidden-mobile">Sexual Orientation</th>
-      <th class="has-text-left">Box</th>
-      <th class="actions"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @heroes.each do |hero| %>
-      <tr>
-        <td><%= link_to hero.name, hero_path(hero) %></td>
-        <td><%= hero.real_name %></td>
-        <td class="is-hidden-mobile"><%= hero.gender_identity %></td>
-        <td class="is-hidden-mobile"><%= hero.sexual_orientation %></td>
-        <td><%= hero.box.name %></td>
-        <td class="actions has-text-right">
-          <%= link_to fa_icon_tag('pen-to-square', 'duotone', title: 'Edit'), edit_hero_path(hero) %>
-          <%= link_to fa_icon_tag('trash', 'duotone', title: 'Delete'), hero_path(hero), data: { turbo_method: 'delete', turbo_confirm: 'Are you sure you want to delete this hero?' } %>
-        </td>
-      </tr>
-    <% end %>
-    <% if @heroes.empty? %>
-      <tr>
-        <td colspan="666" class="has-text-centered p-6">No heroes in database</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<form>
+
+</form>
+
+<% if params[:display] == 'cards' %>
+  <%= render 'shared/table', characters: @heroes %>
+<% else %>
+  <%= render 'shared/cards', characters: @heroes %>
+<% end %>

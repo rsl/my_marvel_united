@@ -1,0 +1,27 @@
+<div class="is-flex is-align-items-start is-justify-content-space-between">
+  <h2><%= character.name %></h2>
+  <%= link_to 'Edit', [:edit, character], class: 'button is-primary is-light' %>
+</div>
+
+<div class="is-flex is-align-items-start">
+  <%= card_image_tag(character) %>
+
+  <table class="table ml-4 is-narrow">
+    <tr>
+      <th scope="row" class="has-text-left">Real Name</th>
+      <td><%= character.real_name %></td>
+    </tr>
+    <tr>
+      <th scope="row" class="has-text-left">Gender Identity</th>
+      <td><%= character.gender_identity %></td>
+    </tr>
+    <tr>
+      <th scope="row" class="has-text-left">Sexual Orientation</th>
+      <td><%= character.sexual_orientation %></td>
+    </tr>
+    <tr>
+      <th scope="row" class="has-text-left">Box</th>
+      <td><%= link_to character.box.name, character.box %></td>
+    </tr>
+  </table>
+</div>

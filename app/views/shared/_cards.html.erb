@@ -1,0 +1,12 @@
+<% if characters.present? %>
+  <div class="is-flex is-flex-wrap-wrap characters">
+    <% characters.each do |character| %>
+      <div class="character">
+        <%= link_to card_image_tag(character), character %>
+        <%= link_to character.name, character %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="has-text-centered">No <%= controller_name %> in database</p>
+<% end %>
