@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_29_175311) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_01_163724) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_29_175311) do
     t.string "real_name"
     t.string "gender_identity"
     t.string "sexual_orientation"
+    t.boolean "mutant", default: false, null: false
     t.index ["box_id"], name: "index_heroes_on_box_id"
     t.index ["slug"], name: "index_heroes_on_slug", unique: true
   end
@@ -82,6 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_29_175311) do
     t.string "sexual_orientation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "mutant", default: false, null: false
     t.index ["box_id"], name: "index_villains_on_box_id"
   end
 

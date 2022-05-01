@@ -1,10 +1,11 @@
 class HeroesController < WebController
   before_action :authenticate_user!
   before_action :load_hero, except: %i[index new create]
+  before_action :ensure_character_display, only: :index
 
   def index
     @heroes = Hero.includes(:box).order(:name)
-    if params[:display] == 'cards'
+    if character_display == 'cards'
       @heroes = @heroes.includes(card_attachment: :blob)
     end
   end

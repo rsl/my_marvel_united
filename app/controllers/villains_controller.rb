@@ -4,7 +4,7 @@ class VillainsController < WebController
 
   def index
     @villains = Villain.includes(:box).order(:name)
-    if params[:display] == 'cards'
+    if character_display == 'cards'
       @villains = @villains.includes(card_attachment: :blob)
     end
   end

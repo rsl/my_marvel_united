@@ -5,4 +5,4 @@
 
 <%= render 'shared/character_filters' %>
 
-<%= render "shared/#{ params[:display] || 'table' }", characters: @villains %>
+<%= render "shared/#{ character_display }", characters: @villains %>
