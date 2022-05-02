@@ -3,14 +3,16 @@
   <%= link_to 'Edit', [:edit, character], class: 'button is-primary is-light' %>
 </div>
 
-<div class="is-flex is-align-items-start">
+<div class="is-flex is-align-items-start mb-6">
   <%= card_image_tag(character) %>
 
   <table class="table ml-4 is-narrow">
-    <tr>
-      <th scope="row" class="has-text-left">Real Name</th>
-      <td><%= character.real_name %></td>
-    </tr>
+    <% if character.real_name.present? %>
+      <tr>
+        <th scope="row" class="has-text-left">Real Name</th>
+        <td><%= character.real_name %></td>
+      </tr>
+    <% end %>
     <tr class="is-hidden">
       <th scope="row" class="has-text-left">Gender Identity</th>
       <td><%= character.gender_identity %></td>
@@ -32,4 +34,26 @@
       </tr>
     <% end %>
   </table>
+</div>
+
+<div class="is-flex is-justify-content-space-between is-align-items-center">
+  <% if character.previous %>
+    <%= link_to character.previous, class: 'is-size-5' do %>
+      <%= fa_icon_tag('chevrons-left') %>
+      <%= character.previous.name %>
+    <% end %>
+  <% else %>
+    <div><em class="has-text-grey-light">No <%= character.class.table_name %> before this</em></div>
+  <% end %>
+
+  <%= link_to "All #{ character.class.table_name.capitalize }", url_for(action: 'index'), class: 'is-size-5' %>
+
+  <% if character.next %>
+    <%= link_to character.next, class: 'is-size-5' do %>
+      <%= character.next.name %>
+      <%= fa_icon_tag('hand-point-right') %>
+    <% end %>
+  <% else %>
+    <div><em class="has-text-grey-light">No <%= character.class.table_name %> after this</em></div>
+  <% end %>
 </div>

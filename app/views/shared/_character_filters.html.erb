@@ -2,14 +2,12 @@
   <div class="is-flex is-justify-content-space-between">
     <div class="field is-horizontal">
       <div class="field-label is-small">
-        <div class="label has-text-info">Display</div>
+        <div class="label has-text-info">Search</div>
       </div>
       <div class="field-body">
-        <div class="field is-narrow">
+        <div class="field">
           <div class="control">
-            <div class="select is-info is-small">
-              <%= select_tag :character_display, options_for_select(%w[Table Cards], selected: character_display), class: 'has-text-info js-immediate-filter' %>
-            </div>
+            <%= text_field_tag :query, params[:query], class: 'input is-small is-info has-text-info', placeholder: 'Character or real name' %>
           </div>
         </div>
       </div>
@@ -32,12 +30,14 @@
 
     <div class="field is-horizontal">
       <div class="field-label is-small">
-        <div class="label has-text-info">Search</div>
+        <div class="label has-text-info">Show&nbsp;as</div>
       </div>
       <div class="field-body">
-        <div class="field">
+        <div class="field is-narrow">
           <div class="control">
-            <%= text_field_tag :query, params[:query], class: 'input is-small is-info has-text-info', placeholder: 'Character or real name' %>
+            <div class="select is-info is-small">
+              <%= select_tag :character_display, options_for_select(%w[Table Cards], selected: character_display), class: 'has-text-info js-immediate-filter' %>
+            </div>
           </div>
         </div>
       </div>
