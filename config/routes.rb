@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :boxes
   resources :heroes
   resources :villains
+  resources :locations
 end

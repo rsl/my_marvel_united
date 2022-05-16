@@ -1,0 +1,56 @@
+<%= form_for location, html: { class: 'mt-6' } do |form| %>
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <%= form.label :name, class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= form.text_field :name, class: 'input' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <%= form.label :box_id, 'Box', class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <div class="select">
+            <%= form.select :box_id, options_from_collection_for_select(Box.all, :id, :name, selected: form.object.box_id), { prompt: 'Select a box'}, required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <%= form.label :notes, class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= form.text_area :notes, class: 'textarea', rows: 6, placeholder: 'This is optional' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal mt-5">
+    <div class="field-label is-normal">
+      <!-- Used for spacing -->
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= form.submit 'Save', class: 'button is-primary' %>
+          <%= link_to 'Cancel', locations_path, class: 'button is-white ml-1' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

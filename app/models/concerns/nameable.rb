@@ -5,6 +5,8 @@ module Nameable
     include FriendlyId
     include PgSearch::Model
 
+    validates :name, presence: true, uniqueness: true
+
     friendly_id :name, use: :slugged
 
     pg_search_scope(

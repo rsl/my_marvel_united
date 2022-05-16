@@ -4,16 +4,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Rails' defaults
 ruby "3.1.2"
 
-gem "rails", "~> 7.0.2", ">= 7.0.2.3"
+gem "rails"
 
 gem "bootsnap", require: false
 gem "cssbundling-rails"
 gem "image_processing", "~> 1.2"
 gem "jbuilder"
 gem "jsbundling-rails"
-gem "pg", "~> 1.1"
-gem "puma", "~> 5.0"
-gem "redis", "~> 4.0"
+gem "pg"
+gem "puma"
+gem "redis"
 gem "sassc-rails"
 gem "sprockets-rails"
 gem "stimulus-rails"
